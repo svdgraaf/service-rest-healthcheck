@@ -1,5 +1,5 @@
 # service-rest-healthcheck
-Check the status of Windows service through REST calls
+Check the status of Windows services through REST calls
 
 # Why?
 We wanted to check through ELB if a windows server was still running a specific service. Now, we can just point the ELB healthcheck to a specific service, and the ELB will mark the Windows machine as unhealthy whenever the Service fails to run or is crashed.
