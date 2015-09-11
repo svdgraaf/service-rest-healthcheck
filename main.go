@@ -13,5 +13,5 @@ func main() {
     router.HandleFunc("/", handlers.IndexHandler)
     router.HandleFunc("/ping", handlers.PingHandler)
     router.HandleFunc("/service/{service}/status/", handlers.StatusHandler)
-    log.Fatal(http.ListenAndServe(":8080", router))
+    log.Fatal(http.ListenAndServe(":8484", router))
 }

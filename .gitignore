@@ -6,7 +6,7 @@
 # Folders
 _obj
 _test
-build
+bin
 pkg
 src/github.com
 src/golang.org
