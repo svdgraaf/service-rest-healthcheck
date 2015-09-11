@@ -2,10 +2,10 @@
 Check the status of Windows service through REST calls
 
 # Why?
-We wanted to check through ELB if a windows server was still running a specific service. Now, we can just point the ELB healthcheck to a specific service, and the ELB will mark the Widnows machine as unhealthy whenever the Service fails to run or is crashed.
+We wanted to check through ELB if a windows server was still running a specific service. Now, we can just point the ELB healthcheck to a specific service, and the ELB will mark the Windows machine as unhealthy whenever the Service fails to run or is crashed.
 
 # Installation
-Download a release from the releases, and install the executable as a service, eg with (http://nssm.cc/)[NSSM]:
+Download a [release](https://github.com/svdgraaf/service-rest-healthcheck/releases), and install the executable as a service, eg with [NSSM](http://nssm.cc/):
 `nssm install ServiceRestHealthcheck C:\service-rest-healthcheck-winx86-0.0.2.exe`
 
 # Usage
