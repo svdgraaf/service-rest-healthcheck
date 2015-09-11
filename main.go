@@ -7,8 +7,8 @@ import (
     "log"
 
     "github.com/gorilla/mux"
-    "golang.org/x/sys/windows/svc/mgr"
-    "golang.org/x/sys/windows"
+    "github.com/golang/sys/windows/svc/mgr"
+    "github.com/golang/sys/windows"
 )
 
 func main() {
