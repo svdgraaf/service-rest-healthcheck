@@ -11,14 +11,17 @@ import (
     "golang.org/x/sys/windows/svc/mgr"
 )
 
+// Index endpoint
 func IndexHandler(w http.ResponseWriter, r *http.Request) {
     fmt.Fprintf(w, "ok")
 }
 
+// Test endpoint
 func PingHandler(w http.ResponseWriter, r *http.Request) {
     fmt.Fprintf(w, "Pong")
 }
 
+// Service Status endpoint, will return 200, 404 or 50x
 func StatusHandler(w http.ResponseWriter, r *http.Request) {
     vars := mux.Vars(r)
     service_name := vars["service"]

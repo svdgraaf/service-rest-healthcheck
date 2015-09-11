@@ -9,9 +9,13 @@ import (
 )
 
 func main() {
-    router := mux.NewRouter().StrictSlash(true)
-    router.HandleFunc("/", handlers.IndexHandler)
-    router.HandleFunc("/ping", handlers.PingHandler)
-    router.HandleFunc("/service/{service}/status/", handlers.StatusHandler)
-    log.Fatal(http.ListenAndServe(":8484", router))
+  router := mux.NewRouter().StrictSlash(true)
+
+  // Routes
+  router.HandleFunc("/", handlers.IndexHandler)
+  router.HandleFunc("/ping", handlers.PingHandler)
+  router.HandleFunc("/service/{service}/status/", handlers.StatusHandler)
+
+  // Listen on port 8484, any interface
+  log.Fatal(http.ListenAndServe(":8484", router))
 }
