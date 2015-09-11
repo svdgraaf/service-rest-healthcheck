@@ -15,15 +15,28 @@ The healthcheck service will run on port 8484. Use these endpoints:
 - `/service/[service]/status`: Check for the service status. Will return a `200 OK` when the service is running with the service state. A `404` when the service is not found, and a `50x` when the service is not found, or if there was another reason why the service could not be checked (see the logs).
 
 ```bash
-$ curl -i http://10.0.0.29:8080/service/bthserv/status/
+$ curl -i http://1.2.3.4:8484/service/bthserv/status/
 HTTP/1.1 500 Internal Server Error
 Date: Fri, 11 Sep 2015 19:20:21 GMT
 Content-Length: 22
 Content-Type: text/plain; charset=utf-8
 
 Service is not running
+
+$ curl -i http://1.2.3.4:8484/service/foobar/status/
+HTTP/1.1 404 Not Found
+Date: Fri, 11 Sep 2015 19:20:15 GMT
+Content-Length: 0
+Content-Type: text/plain; charset=utf-8
+
+$ curl -i http://1.2.3.4:8484/service/power/status/
+HTTP/1.1 200 OK
+Date: Fri, 11 Sep 2015 19:19:31 GMT
+Content-Length: 29
+Content-Type: text/plain; charset=utf-8
+
+Service is running: {4 4 0 0}
 ```
 
-
 # Compile
-Get all the dependencies, `go get -d`, and run `make`. The build will be in the build directory.
+Get all the dependencies, `go get -d`, and run `make`. The build will be in the `bin` directory.
